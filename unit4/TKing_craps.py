@@ -88,6 +88,8 @@ def main():
     get_bet()
     dice = rolldice()
     check_first_roll(dice)
+    point = check_first_roll(dice)
+    check_point_number(point)
     
     
 
