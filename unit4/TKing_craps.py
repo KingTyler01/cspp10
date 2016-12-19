@@ -49,27 +49,54 @@ def get_bet():
             return bet
 
 def check_first_roll(dice3):
-    if dice3 == 2 or dice3 == 3 or dice3 == 12:
-        print ("You lost the roll.")
-        return ("loss")
-    elif dice3 == 7 or dice3 == 11:
-        print ("You won the roll.")
-        return ("win")
-    else:
-        print ("Your point number is {}.".format(dice3))
-        return (dice3)
-
-    
-def check_point_number(dice3):
-    roll = check_first_roll(dice3)
-    if roll == dice3:
-        print("You won the roll.")
-        return ("win")
-    elif roll == 7:
-        print("You lost the roll")
+    while True:
+        if dice3 == 2 or dice3 == 3 or dice3 == 12:
+            print ("You lost the roll.")
+            return ("loss")
+        elif dice3 == 7 or dice3 == 11:
+            print ("You won the roll.")
+            return ("win")
+        else:
+            print ("Your point number is {}.".format(dice3))
+            return (dice3)
+            
+        roll = 0
+        if roll == dice3:
+            print("You won the roll.")
+            return ("win")
+        elif roll == 7:
+            print("You lost the roll")
         return ("loss")
     else:
         print("You didn't win or lose. Reroll!")
+        return roll
+
+    while dice3 != 7 or dice3 != roll:
+        dice4 = random.randint(1,6)
+        dice5 = random.randint(1,6)
+        dice6 = dice4 +dice5
+    if dice6 == 7:
+        print("Lost")
+        return "Lost"
+    elif dice6 == roll:
+        print("Win")
+        return "Win"
+    
+    
+    
+
+
+    
+# def check_point_number(dice3):
+#     roll = check_first_roll(dice3)
+#     if roll == dice3:
+#         print("You won the roll.")
+#         return ("win")
+#     elif roll == 7:
+#         print("You lost the roll")
+#         return ("loss")
+#     else:
+#         print("You didn't win or lose. Reroll!")
 
 def win_lose(roll,player_money,bet,dice3):
     if roll == dice3:
@@ -88,8 +115,11 @@ def main():
     get_bet()
     dice = rolldice()
     check_first_roll(dice)
-    point = check_first_roll(dice)
-    check_point_number(point)
+    
+    
+  
+    
+    
     
     
 
