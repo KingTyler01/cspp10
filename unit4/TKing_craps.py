@@ -28,7 +28,8 @@ def instructions():
             
 
     
-            
+def Player_money():
+    player_money = 100
 
 def rolldice():
     dice1 = random.randint(1,6)
@@ -70,40 +71,28 @@ def check_first_roll(dice3):
     else:
         print("You didn't win or lose. Reroll!")
         return roll
-
-    while dice3 != 7 or dice3 != roll:
-        dice4 = random.randint(1,6)
-        dice5 = random.randint(1,6)
-        dice6 = dice4 +dice5
-    if dice6 == 7:
-        print("Lost")
-        return "Lost"
-    elif dice6 == roll:
-        print("Win")
-        return "Win"
     
     
     
 
 
     
-# def check_point_number(dice3):
-#     roll = check_first_roll(dice3)
-#     if roll == dice3:
-#         print("You won the roll.")
-#         return ("win")
-#     elif roll == 7:
-#         print("You lost the roll")
-#         return ("loss")
-#     else:
-#         print("You didn't win or lose. Reroll!")
+def check_point_number(dice3):
+    roll = dice3
+    while True:
+        new_roll = rolldice()
+        if roll == new_roll:
+            print("You won the roll.")
+            return ("win")
+        elif new_roll == 7:
+            print("You lost the roll")
+            return ("loss")
+        else:
+            print("You didn't win or lose. Reroll!")
 
-def win_lose(roll,player_money,bet,dice3):
-    if roll == dice3:
-        player_money + bet
-    else:
-        player_money - bet
-        
+
+    
+         
         
         
         
@@ -115,6 +104,25 @@ def main():
     get_bet()
     dice = rolldice()
     check_first_roll(dice)
+    check_point_number(dice)
+    while True:
+        bet = get_bet()
+        bank = 100
+        x = dice
+        if x == "Win":
+            bet = bank + bet
+            print ("Now you have {} in your bank.".format(bank))
+        elif x == "Lose":
+            bank = bank - bet
+            print(" Now you have {} in your bank.".format(bank))
+        # elif pw == "W":
+        #     bank = bank + bet
+        #     print ("Now you have {} in your bank.".format(bank))
+        # elif pw == "L":
+        #     bank = bank - bet
+        #     print ("You now have {} in your bank.".format(bank))
+
+
     
     
   
