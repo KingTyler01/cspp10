@@ -28,9 +28,6 @@ def instructions():
             
 
     
-def Player_money():
-    player_money = 100
-
 def rolldice():
     dice1 = random.randint(1,6)
     dice2 = random.randint(1,6)
@@ -105,24 +102,18 @@ def main():
     dice = rolldice()
     check_first_roll(dice)
     check_point_number(dice)
-    while True:
-        bet = get_bet()
-        bank = 100
-        x = dice
-        if x == "Win":
-            bet = bank + bet
-            print ("Now you have {} in your bank.".format(bank))
-        elif x == "Lose":
-            bank = bank - bet
-            print(" Now you have {} in your bank.".format(bank))
-        # elif pw == "W":
-        #     bank = bank + bet
-        #     print ("Now you have {} in your bank.".format(bank))
-        # elif pw == "L":
-        #     bank = bank - bet
-        #     print ("You now have {} in your bank.".format(bank))
-
-
+    player_money = 100
+    bet = get_bet()
+    if check_point_number(dice) == "win":
+        player_money = player_money + bet
+        print("You now have ${}".format(player_money))
+    else:
+        player_money = player_money - bet
+        print("You now have ${}".format(player_money))
+        
+    
+            
+        
     
     
   
