@@ -10,7 +10,7 @@ def instructions():
         print("-----------------------------------------------------------------------------------")
         print("If the player rolls a 2, 3, or 12 in this phase, they lose their bet, and the round ends")
         print("If the player rolls a 7 or 11 in this phase, they win their bet, and the round ends")
-        print("If the player rolls any other number (a 4,5,6,8,9,10), then they continue to Phase 3, with their roll becoming their “point number“ ")
+        print("If the player rolls any other number ( 4,5,6,8,9,10), then they continue to Phase 3, with their roll becoming their \"point number\" ")
         print("If the player reaches Phase 3, which most rounds they do, then they keep rolling die until they roll a 7 or they roll their point number.")
         print("-----------------------------------------------------------------------------------")
         print("If the player rolls their point number first, they win their bet, and the round ends.")
@@ -98,30 +98,19 @@ def check_point_number(dice3):
 def main():
     print("Welcome to Craps!!")
     instructions()
+    player_money = 100
     get_bet()
+    bet = get_bet()
     dice = rolldice()
     check_first_roll(dice)
     check_point_number(dice)
-    player_money = 100
-    bet = get_bet()
-    if check_point_number(dice) == "win":
-        player_money = player_money + bet
-        print("You now have ${}".format(player_money))
+    new_money = player_money + bet
+    nw_money = player_money - bet
+    if check_point_number(dice) =="win":
+        print("You now have ${}".format(new_money))
     else:
-        player_money = player_money - bet
-        print("You now have ${}".format(player_money))
-        
+        print("You now have ${}".format(nw_money)
     
-            
-        
-    
-    
-  
-    
-    
-    
-    
-
     
     
 main()
