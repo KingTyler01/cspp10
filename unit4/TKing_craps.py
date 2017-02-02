@@ -109,8 +109,5 @@ def main():
     if check_point_number(dice) =="win":
         print("You now have ${}".format(new_money))
     else:
-        print("You now have ${}".format(nw_money)
-    
-    
-    
+        print("You now have ${}".format(nw_money))
 main()

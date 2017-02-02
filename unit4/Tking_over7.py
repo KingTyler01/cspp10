@@ -29,15 +29,13 @@ def get_range(dice3):
     else:
         print("7")
         return "7"
+get_bet()
 rolldice()
-        
+
 
     
 
-rolldice()
-rnge = get_range(dice3)
-    
-        
+
 
 
 
